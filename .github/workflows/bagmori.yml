@@ -1,4 +1,4 @@
-name: bagmori-link
+name: bagmori
 
 on:
   schedule:

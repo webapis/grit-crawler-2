@@ -1,4 +1,4 @@
-name: beymen-link
+name: beymen
 on:
   schedule:
     - cron:  '0 0 * * 2,4'

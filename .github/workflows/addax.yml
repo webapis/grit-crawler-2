@@ -1,4 +1,4 @@
-name: addax-link
+name: addax
 on:
   schedule:
     - cron:  '0 0 * * 1,3'

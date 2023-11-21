@@ -1,4 +1,4 @@
-name: alpinist-link
+name: alpinist
 on:
   schedule:
     - cron:  '0 0 * * 1,3'

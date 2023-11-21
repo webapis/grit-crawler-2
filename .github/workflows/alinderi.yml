@@ -1,4 +1,4 @@
-name: alinderi-link
+name: alinderi
 on:
   schedule:
     - cron:  '0 0 * * 1,3'
