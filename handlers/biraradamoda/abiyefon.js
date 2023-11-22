@@ -25,7 +25,7 @@ const  extractor=async (page)=> {
                     link,
                     timestamp: Date.now(),
                     marka:'abiyefon'
-                }  
+                }
             }
             catch (error) {
                     return {error:error.toString(),content:document.innerHTML}

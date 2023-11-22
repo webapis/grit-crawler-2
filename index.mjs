@@ -1,11 +1,10 @@
 
-
 import { createRequire } from 'module';
 const require = createRequire(import.meta.url);
 const { PuppeteerCrawler, Dataset,RequestQueue } =require('crawlee');
 import { uploadCollection } from'./utils/uploadCollection.mjs'
 
-const {uniquefyData,generateMTM}=require('./utils/mapAsCollection.js')
+const {uniquefyData}=require('./utils/mapAsCollection.js')
 const fetch =require('node-fetch')
 require('dotenv').config()
 
@@ -257,16 +256,14 @@ if(productItems.length===0){
     }
 
     if(errorPercentate <5){
-        const pageDataset = await Dataset.open(`pageInfo`);
-        const { items: pageItems } = await pageDataset.getData();
+    
         const productItemsWithoutError =productItems.filter(f=>!f.error)
-   
 
         console.log('productItemsWithoutError----',productItemsWithoutError.length)
-        const uniqueData =uniquefyData({data:productItemsWithoutError})
-        const mTmCollection= generateMTM({data:productItemsWithoutError})
+      //  const uniqueData =uniquefyData({data:productItemsWithoutError})
+   
        
-            await uploadCollection({ fileName: `${marka}`, data: {uniqueData,mTmCollection,pageItems}, gender: 'all', marka })
+            await uploadCollection({ fileName: `${marka}`, data:productItemsWithoutError, gender: 'all', marka })
        
         
 
@@ -274,8 +271,6 @@ if(productItems.length===0){
     }
      
         
-    
-
 
     console.log('Crawl finished.');
 

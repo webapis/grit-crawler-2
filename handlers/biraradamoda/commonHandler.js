@@ -71,23 +71,10 @@ async function commonHandler({page,context,productPageSelector, linkSelector, li
         
             const data = await extractor(page, context)
 
-            const withId = data.map((m)=>{
+            return data.map((m)=>{
               
-                const prodId = generateUniqueKey({imageUrl:m.imageUrl,marka:m.marka,link:m.link})
-         
-                return {...m,id:prodId,pid:id}
+                return {...m,hrefText,docTitle,link  }
             })
- 
-
-            console.log('data length_____', data.length, 'url:', url)
-            if(start){
-                if(data.length>0){
-                    const pageDataset = await Dataset.open(`pageInfo`);
-                    await pageDataset.pushData({hrefText,docTitle,link,objectID:id,brand:marka,domainName  })
-                }
-             
-            }
-            return withId
         } else{
             console.log( '[]:', url)
                 return[]
