@@ -1,0 +1,34 @@
+[
+    {
+        "searchterm": [
+            "elbise",
+            "dress"
+        ],
+        "category": "elbise"
+    },
+    {
+        "searchterm": [
+            "gömlek",
+            "gomlek"
+        ],
+        "category": "gömlek"
+    },
+    {
+        "searchterm": [
+            "pantolon"
+        ],
+        "category": "pantolon"
+    },
+    {
+        "searchterm": [
+            "ceket"
+        ],
+        "category": "ceket"
+    },
+    {
+        "searchterm": [
+            "mont"
+        ],
+        "category": "mont"
+    }
+]
