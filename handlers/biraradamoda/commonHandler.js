@@ -3,7 +3,10 @@ const fetch = require('node-fetch')
 const { Dataset, RequestQueue } = require('crawlee');
 const { generateUniqueKey } = require('../../utils/generateUniqueKey')
 const { searchObject } = require('../../utils/searchObject')
-const categories = require('../../utils/categories.json')
+const categories = require('../../utils/data/categories.json')
+const genders = require('../../utils/data/genders.json')
+const colors = require('../../utils/data/colors.json')
+const prodtypes = require('../../utils/data/prodtypes.json')
 const marka = process.env.marka
 
 async function commonHandler({ page, context, productPageSelector, linkSelector, linksToRemove, hostname, exclude, postFix }) {
@@ -76,9 +79,33 @@ async function commonHandler({ page, context, productPageSelector, linkSelector,
       return {
         ...m,
         ct: category ? category.category : 'unknown',
-        st: category ? category.searchterm.join(' ') : 'unknown'
+        st: category ? category.searchterm.join(' ') : 'unknown',
       }
     })
+      .map(m => {
+        const gender = genders.find((f) => searchObject(m, f.searchterm))
+        return {
+          ...m,
+          gender: gender ? gender.category : 'unknown',
+
+        }
+      })
+      .map(m => {
+        const color = colors.find((f) => searchObject(m, f.searchterm))
+        return {
+          ...m,
+          color: color ? color.category : 'unknown',
+
+        }
+      })
+      .map(m => {
+        const prodType = prodtypes.find((f) => searchObject(m, f.searchterm))
+        return {
+          ...m,
+          prodType: prodType ? prodType.category : 'unknown',
+
+        }
+      })
   } else {
     console.log('[]:', url)
     return []

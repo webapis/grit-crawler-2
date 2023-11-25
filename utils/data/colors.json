@@ -1,0 +1,27 @@
+[
+    {
+        "searchterm": [
+            "beyaz"
+
+        ],
+        "category": "beyaz"
+    },
+    {
+        "searchterm": [
+            "siyah"
+        ],
+        "category": "siyah"
+    },
+    {
+        "searchterm": [
+            "sari", "sarı"
+        ],
+        "category": "sarı"
+    },
+    {
+        "searchterm": [
+            "kahve"
+        ],
+        "category": "kahve"
+    }
+]

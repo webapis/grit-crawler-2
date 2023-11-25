@@ -1,0 +1,28 @@
+[
+    {
+        "searchterm": [
+            "kadın",
+            "kadin",
+            "addax"
+        ],
+        "category": "kadın"
+    },
+    {
+        "searchterm": [
+            "erkek"
+        ],
+        "category": "erkek"
+    },
+    {
+        "searchterm": [
+            "kiz cocuk","kız çocuk","kiz-cocuk"
+        ],
+        "category": "kız çocuk"
+    },
+    {
+        "searchterm": [
+            "erkek cocuk","erkek çocuk","erkek-cocuk"
+        ],
+        "category": "erkek çocuk"
+    }
+]
