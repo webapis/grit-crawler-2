@@ -1,5 +1,5 @@
 
-const {autoScroll}=require('../../utils/autoscroll')
+//const {autoScroll}=require('../../utils/autoscroll')
 const initValues ={
     productPageSelector:'.product-grid__product-list',
     linkSelector:'.ddd',
@@ -12,13 +12,13 @@ const initValues ={
 
 
 
-async function extractor(page) {
+async function handler(page) {
 
     debugger
 
 debugger
 
-await autoScroll(page)
+//await autoScroll(page)
 
     const url = await page.url()
     debugger
@@ -52,7 +52,7 @@ await autoScroll(page)
 
 debugger
   
-    return data.filter(f=>f.imageUrl !==null)
+    return data
 
 }
 
@@ -62,4 +62,4 @@ async function getUrls(page) {
 }
 
 
-module.exports = { extractor, getUrls,...initValues }
+module.exports = { handler, getUrls,...initValues }
